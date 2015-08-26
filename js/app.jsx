@@ -2,12 +2,12 @@
 var React = require('react');
 var $ = require('jquery');
 var Component=require('./component.jsx');
+require('jquery-ui');
 
 require("../css/style.css");
 
 $(document).ready(function(){
-	$('body').append('<div id="hello"></div>');
-	React.render(<Component/>, $('#hello').get(0));
+	React.render(<Component />, $('body').get(0));
 });
 
 
