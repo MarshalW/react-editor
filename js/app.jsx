@@ -1,11 +1,11 @@
 'use strict'
 var React = require('react');
-var Component=require('./component.jsx');
+var Canvas=require('./canvas.jsx');
 require("../css/style.css");
 
-
 $(function(){
-	React.render(<Component />, $('body').get(0));
+	// React.render(<Component />, $('body').get(0));
+	React.render(<Canvas />, $('body').get(0));
 });
 
 	
