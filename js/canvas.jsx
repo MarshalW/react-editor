@@ -6,17 +6,24 @@ module.exports = React.createClass({
 	componentDidMount:function(){
 		var node=React.findDOMNode(this);
 		$(node).children().each(function(){
-			$(this).css({position:"absolute"});
 			$(this).draggable().resizable({
 				handles: 'n, s, e, w,se, nw, ne,sw'
 			});
 		});
 	},
 	render: function () {
+
+		var componentNodes=this.props.data.map(
+			function(component){
+				return (
+					<Component data={component} />
+				);
+			}
+		);
+
 	    return (
 	    	<div>
-	    		<Component />
-	    		<Component />
+	    		{componentNodes}
 	    	</div>
 	    );
   }
