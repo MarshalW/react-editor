@@ -11,9 +11,8 @@ module.exports = React.createClass({
 
 		// 发送消息
 		$(node).on('click',function(event){
-			// var component=self.getComponentFromNode(event.target);
 			self.props.dispatcher.dispatch({
-				eventName:'canvs-click',
+				eventName:'canvsLostFocus',
 				target:event.target
 			});
 		});
