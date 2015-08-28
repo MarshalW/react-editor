@@ -1,6 +1,7 @@
 'use strict'
 var React = require('react');
 var Canvas=require('./canvas.jsx');
+var Dispatcher = require('flux').Dispatcher;
 require("../css/style.css");
 
 var data=[
@@ -24,8 +25,10 @@ var data=[
 	}
 ];
 
+var AppDispatcher=new Dispatcher();
+
 $(function(){
-	React.render(<Canvas data={data}/>, $('body').get(0));
+	React.render(<Canvas data={data} dispatcher={AppDispatcher}/>, $('body').get(0));
 });
 
 	

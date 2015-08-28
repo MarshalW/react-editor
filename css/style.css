@@ -3,3 +3,8 @@ body {
 }
 
 #draggable { width: 150px; height: 150px; padding: 0.5em; background-color: white;}
+
+.canvas{
+	width: 100%;
+	height:100%;
+}
