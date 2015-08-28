@@ -4,19 +4,19 @@ var React = require('react');
 var Component=require('./component.jsx');
 
 module.exports = React.createClass({
+	foucusComponent:null,
 	componentDidMount:function(){
 		var node=React.findDOMNode(this);
 		var self=this;
 
 		// 发送消息
 		$(node).on('click',function(event){
+			// var component=self.getComponentFromNode(event.target);
 			self.props.dispatcher.dispatch({
 				eventName:'canvs-click',
 				target:event.target
 			});
 		});
-
-
 	},
 	render: function () {
 		var self=this;
