@@ -2,33 +2,16 @@
 var React = require('react');
 var Canvas=require('./canvas.jsx');
 var Dispatcher = require('flux').Dispatcher;
+var PageStore=require('./pagestore.js');
 require("../css/style.css");
 
-var data=[
-	{
-		style:{
-			position:"absolute",
-			left:'200px',
-			top:'10px',
-			width:'200px',
-			height:'100px'
-		}
-	},
-	{
-		style:{
-			position:"absolute",
-			left:'100px',
-			top:'280px',
-			width:'150px',
-			height:'80px'
-		}
-	}
-];
+var data=PageStore.pages[0].components;
 
 var AppDispatcher=new Dispatcher();
+var pageIndex=0;
 
 $(function(){
-	React.render(<Canvas data={data} dispatcher={AppDispatcher}/>, $('body').get(0));
+	React.render(<Canvas pageIndex={pageIndex} dispatcher={AppDispatcher}/>, $('body').get(0));
 });
 
 	

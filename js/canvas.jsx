@@ -1,6 +1,6 @@
 'use strict'
 var React = require('react');
-
+var PageStore=require('./pagestore.js');
 var Component=require('./component.jsx');
 
 module.exports = React.createClass({
@@ -19,10 +19,14 @@ module.exports = React.createClass({
 	},
 	render: function () {
 		var self=this;
-		var componentNodes=this.props.data.map(
+		var pageIndex=this.props.pageIndex;
+		var componentIndex=0;
+		var componentNodes=PageStore.pages[pageIndex].components.map(
 			function(component){
+				var index=componentIndex;
+				componentIndex++;
 				return (
-					<Component data={component} dispatcher={self.props.dispatcher}/>
+					<Component data={component} pageIndex={pageIndex} componentIndex={index} dispatcher={self.props.dispatcher}/>
 				);
 			}
 		);
